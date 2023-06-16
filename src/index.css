@@ -4,3 +4,22 @@
 .content {
   min-height: calc(100vh - 70px - 64px);
 }
+.movie {
+  transition: 0.2s all ease-in-out;
+}
+.movie:hover {
+  transform: scale(1.02);
+}
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.loader {
+  margin: 300px 10%;
+}
+.search-btn {
+  right: 0;
+  top: 0;
+  position: absolute;
+}
