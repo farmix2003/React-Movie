@@ -17,7 +17,7 @@ export default class Main extends React.Component {
     this.setState({ loading: true });
     fetch(
       `http://www.omdbapi.com/?apikey=b8202e0a&s=${str}${
-        type !== "all" ? `&type = ${type}` : ""
+        type !== "all" ? `&type=${type}` : ""
       }`
     )
       .then((response) => response.json())

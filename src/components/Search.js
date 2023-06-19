@@ -2,7 +2,7 @@ import React from "react";
 
 export default class Search extends React.Component {
   state = {
-    search: "",
+    search: "panda",
     type: "all",
   };
   keyDown = (e) => {
@@ -14,34 +14,33 @@ export default class Search extends React.Component {
     this.setState(
       () => ({ type: e.target.dataset.type }),
       () => {
-        this.props.SearchMovies(this.state.type);
+        this.props.SearchMovies(this.state.search, this.state.type);
       }
     );
   };
   render() {
     return (
       <div class="row">
-        <div class="col s12">
-          <div class="input-field">
-            <input
-              id="email_inline"
-              placeholder="Search"
-              type="search"
-              class="validate"
-              value={this.state.search}
-              onChange={(e) => this.setState({ search: e.target.value })}
-              onKeyDown={this.keyDown}
-            />
-            <button
-              className="btn search-btn"
-              onClick={() =>
-                this.props.SearchMovies(this.state.search, this.state.type)
-              }
-            >
-              Search Movies
-            </button>
-          </div>
+        <div class="input-field">
+          <input
+            id="email_inline"
+            placeholder="Search"
+            type="search"
+            class="validate"
+            value={this.state.search}
+            onChange={(e) => this.setState({ search: e.target.value })}
+            onKeyDown={this.keyDown}
+          />
+          <button
+            className="btn search-btn"
+            onClick={() =>
+              this.props.SearchMovies(this.state.search, this.state.type)
+            }
+          >
+            Search Movies
+          </button>
         </div>
+
         <div>
           <label>
             <input
